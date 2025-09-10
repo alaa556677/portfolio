@@ -68,7 +68,7 @@ class _MobileSidebarState extends State<MobileSidebar> {
           Row(
             children: [
               InkWell(
-                onTap: () => ()=> openInNewTab(personalInfo!.linkedIn),
+                onTap: () => openInNewTab(personalInfo!.linkedIn),
                 child: Container(
                   width: 28,
                   height: 28,
@@ -89,7 +89,7 @@ class _MobileSidebarState extends State<MobileSidebar> {
               ),
               SizedBox(width: 14,),
               InkWell(
-                onTap: () => ()=> openInNewTab(personalInfo!.linkedIn),
+                onTap: () => openInNewTab(personalInfo!.linkedIn),
                 child: Container(
                   width: 28,
                   height: 28,
@@ -102,6 +102,27 @@ class _MobileSidebarState extends State<MobileSidebar> {
                     ),
                   ),
                   child: Image.asset("assets/images/github.png", color: AppColors.textSecondaryColor(context), width: 20, height: 20,),
+                ),
+              ),
+              SizedBox(width: 14,),
+              InkWell(
+                onTap: () => sideBarController.downloadCV(),
+                child: Container(
+                  width: 28,
+                  height: 28,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(6),
+                    border: Border.all(
+                      color: AppColors.textSecondaryColor(context),
+                      width: 1,
+                    ),
+                  ),
+                  child: CustomTextWidget(
+                    text: "Cv",
+                    fontColor: AppColors.textSecondaryColor(context),
+                    fontSize: 14,
+                  ),
                 ),
               ),
               SizedBox(width: 8,),

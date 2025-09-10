@@ -35,12 +35,15 @@ class ExperienceCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CustomTextWidget(
-                      text: experience!.jobTitle,
-                      fontSize: AppConstants.titleFontSize,
-                      fontColor: AppColors.textColor,
+                    Expanded(
+                      child: CustomTextWidget(
+                        text: experience!.jobTitle,
+                        fontSize: AppConstants.titleFontSize,
+                        fontColor: AppColors.textColor,
+                        maxLines: 1,
+                        textOverflow: TextOverflow.ellipsis,
+                      ),
                     ),
                     if(experience!.company == "Dexef ERP")...[
                       Container(

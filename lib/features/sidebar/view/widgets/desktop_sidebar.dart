@@ -87,6 +87,12 @@ class _DesktopSidebarState extends State<DesktopSidebar> {
                   value: "GitHub",
                   onTap: ()=> openInNewTab(personalInfo!.gitHub),
                 ),
+                const SizedBox(height: 12),
+                RowInformationWidget(
+                  stringIcon: "cv",
+                  value: "Download CV",
+                  onTap: ()=> sideBarController.downloadCV(),
+                ),
               ],
             ),
           ),

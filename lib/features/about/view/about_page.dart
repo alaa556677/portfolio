@@ -80,76 +80,73 @@ class _AboutPageState extends State<AboutPage> {
               fontSize: AppConstants.titleFontSize,
               isSubTitle: false,
               titleColor: AppColors.textColor,
-              widgetValue: Padding(
-                padding: EdgeInsetsDirectional.only(start: 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(height: 10,),
-                    FeatureWidget(
-                      title: "Languages & Frameworks",
-                      widgetValue: Wrap(
-                        runSpacing: 12,
-                        spacing: 6,
-                        children: aboutModel!.frameworks.map((e) => SkillCardWidget(text: e)).toList(),
-                      ),
+              widgetValue: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 10,),
+                  FeatureWidget(
+                    title: "Languages & Frameworks",
+                    widgetValue: Wrap(
+                      runSpacing: 12,
+                      spacing: 6,
+                      children: aboutModel!.frameworks.map((e) => SkillCardWidget(text: e)).toList(),
                     ),
-                    SizedBox(height: 16,),
-                    FeatureWidget(
-                      title: "State Management",
-                      widgetValue: Wrap(
-                        runSpacing: 12,
-                        spacing: 6,
-                        children: aboutModel!.stateManagement.map((e) => SkillCardWidget(text: e)).toList(),
-                      ),
+                  ),
+                  SizedBox(height: 16,),
+                  FeatureWidget(
+                    title: "State Management",
+                    widgetValue: Wrap(
+                      runSpacing: 12,
+                      spacing: 6,
+                      children: aboutModel!.stateManagement.map((e) => SkillCardWidget(text: e)).toList(),
                     ),
-                    SizedBox(height: 16,),
-                    FeatureWidget(
-                      title: "Databases & Storage",
-                      widgetValue: Wrap(
-                        runSpacing: 12,
-                        spacing: 6,
-                        children: aboutModel!.database.map((e) => SkillCardWidget(text: e)).toList(),
-                      ),
+                  ),
+                  SizedBox(height: 16,),
+                  FeatureWidget(
+                    title: "Databases & Storage",
+                    widgetValue: Wrap(
+                      runSpacing: 12,
+                      spacing: 6,
+                      children: aboutModel!.database.map((e) => SkillCardWidget(text: e)).toList(),
                     ),
-                    SizedBox(height: 16,),
-                    FeatureWidget(
-                      title: "Architecture & Patterns",
-                      widgetValue: Wrap(
-                        runSpacing: 12,
-                        spacing: 6,
-                        children: aboutModel!.architecture.map((e) => SkillCardWidget(text: e)).toList(),
-                      ),
+                  ),
+                  SizedBox(height: 16,),
+                  FeatureWidget(
+                    title: "Architecture & Patterns",
+                    widgetValue: Wrap(
+                      runSpacing: 12,
+                      spacing: 6,
+                      children: aboutModel!.architecture.map((e) => SkillCardWidget(text: e)).toList(),
                     ),
-                    SizedBox(height: 16,),
-                    FeatureWidget(
-                      title: "Tools & Platforms",
-                      widgetValue: Wrap(
-                        runSpacing: 12,
-                        spacing: 6,
-                        children: aboutModel!.tools.map((e) => SkillCardWidget(text: e)).toList(),
-                      ),
+                  ),
+                  SizedBox(height: 16,),
+                  FeatureWidget(
+                    title: "Tools & Platforms",
+                    widgetValue: Wrap(
+                      runSpacing: 12,
+                      spacing: 6,
+                      children: aboutModel!.tools.map((e) => SkillCardWidget(text: e)).toList(),
                     ),
-                    SizedBox(height: 16,),
-                    FeatureWidget(
-                      title: "Testing & Quality",
-                      widgetValue: Wrap(
-                        runSpacing: 12,
-                        spacing: 6,
-                        children: aboutModel!.testing.map((e) => SkillCardWidget(text: e)).toList(),
-                      ),
+                  ),
+                  SizedBox(height: 16,),
+                  FeatureWidget(
+                    title: "Testing & Quality",
+                    widgetValue: Wrap(
+                      runSpacing: 12,
+                      spacing: 6,
+                      children: aboutModel!.testing.map((e) => SkillCardWidget(text: e)).toList(),
                     ),
-                    SizedBox(height: 16,),
-                    FeatureWidget(
-                      title: "Other Skills",
-                      widgetValue: Wrap(
-                        runSpacing: 12,
-                        spacing: 6,
-                        children: aboutModel!.otherSkills.map((e) => SkillCardWidget(text: e)).toList(),
-                      ),
+                  ),
+                  SizedBox(height: 16,),
+                  FeatureWidget(
+                    title: "Other Skills",
+                    widgetValue: Wrap(
+                      runSpacing: 12,
+                      spacing: 6,
+                      children: aboutModel!.otherSkills.map((e) => SkillCardWidget(text: e)).toList(),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               )
             ),
             Padding(

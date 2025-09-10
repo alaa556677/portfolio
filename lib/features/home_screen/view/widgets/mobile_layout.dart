@@ -56,6 +56,8 @@ class _MobileLayoutState extends State<MobileLayout> with SingleTickerProviderSt
                     child: CustomTextWidget(
                       text: "About",
                       fontSize: AppConstants.tabTitleFontSize,
+                      maxLines: 1,
+                      textOverflow: TextOverflow.ellipsis,
                     ),
                   ),
                   Padding(
@@ -63,6 +65,8 @@ class _MobileLayoutState extends State<MobileLayout> with SingleTickerProviderSt
                     child: CustomTextWidget(
                       text: "Experience",
                       fontSize: AppConstants.tabTitleFontSize,
+                      maxLines: 1,
+                      textOverflow: TextOverflow.ellipsis,
                     ),
                   ),
                   Padding(
@@ -70,6 +74,8 @@ class _MobileLayoutState extends State<MobileLayout> with SingleTickerProviderSt
                     child: CustomTextWidget(
                       text: "Projects",
                       fontSize: AppConstants.tabTitleFontSize,
+                      maxLines: 1,
+                      textOverflow: TextOverflow.ellipsis,
                     ),
                   ),
                   Padding(
@@ -77,6 +83,8 @@ class _MobileLayoutState extends State<MobileLayout> with SingleTickerProviderSt
                     child: CustomTextWidget(
                       text: "Contact me",
                       fontSize: AppConstants.tabTitleFontSize,
+                      maxLines: 1,
+                      textOverflow: TextOverflow.ellipsis,
                     ),
                   ),
                 ],),

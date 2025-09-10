@@ -2,7 +2,7 @@
   "experience" : [
     {
       "jobTitle" : "Senior Flutter Developer",
-      "company" : "Dexef ERP",
+      "company" : "Dexef ERP (Full-time)",
       "location" : "Qwesna - Menofia",
       "dateFrom" : "Mars in 2023",
       "dateTo" : "current",
@@ -24,8 +24,8 @@
       ]
     },
     {
-      "jobTitle" : "Part-Time Senior Flutter Developer",
-      "company" : "Yapoey Company",
+      "jobTitle" : "Senior Flutter Developer",
+      "company" : "Yapoey Company (Part-time)",
       "location" : "South Korea",
       "dateFrom" : "Feb 2024",
       "dateTo" : "Jun 2024",
