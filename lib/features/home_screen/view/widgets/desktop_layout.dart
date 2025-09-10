@@ -8,6 +8,7 @@ import '../../../../core/widgets/border_style.dart';
 import '../../../../core/widgets/custom_text.dart';
 import '../../../../core/widgets/divider_widget.dart';
 import '../../../about/view/about_page.dart';
+import '../../../contact_me/view/contact_screen.dart';
 import '../../../experiense/view/experience_page.dart';
 import '../../../projects/view/projects_page.dart';
 import '../../../sidebar/view/personal_sidebar.dart';
@@ -103,7 +104,7 @@ class _DesktopLayoutState extends State<DesktopLayout> with SingleTickerProvider
                           AboutPage(),
                           ExperiencePage(),
                           ProjectPage(),
-                          Text("Contact me"),
+                          ContactScreen(),
                         ]
                       )
                     )

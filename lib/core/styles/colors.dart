@@ -16,4 +16,5 @@ class AppColors{
   static const Color blackColor = Colors.black;
   static const Color transparent = Colors.transparent;
   static Color textTransparent = Colors.black.withOpacity(.6);
+  static Color errorBorder = Colors.red;
 }
