@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/core/widgets/border_style.dart';
 import '../../../../core/app_constants.dart';
+import '../../../../core/methods.dart';
 import '../../../../core/styles/colors.dart';
 import '../../../../core/widgets/container_image.dart';
 import '../../../../core/widgets/custom_button.dart';
@@ -66,17 +67,23 @@ class ProjectCard extends StatelessWidget {
                   children: [
                     if(projects.googleLink != "")...[
                       Expanded(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.symmetric(horizontal: 6),
-                            child: CustomButton(buttonName: "Android",),
-                          )
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.symmetric(horizontal: 6),
+                          child: CustomButton(
+                            buttonName: "Android",
+                            onTap: () => openInNewTab(projects.googleLink!),
+                          ),
+                        )
                       ),
                     ],
                     if(projects.appleLink != "")...[
                       Expanded(
                           child: Padding(
                             padding: EdgeInsetsDirectional.symmetric(horizontal: 6),
-                            child: CustomButton(buttonName: "IOS",),
+                            child: CustomButton(
+                              onTap: () => openInNewTab(projects.appleLink!),
+                              buttonName: "IOS",
+                            ),
                           )
                       ),
                     ],
@@ -84,7 +91,9 @@ class ProjectCard extends StatelessWidget {
                       Expanded(
                           child: Padding(
                             padding: EdgeInsetsDirectional.symmetric(horizontal: 6),
-                            child: CustomButton(buttonName: "Web",),
+                            child: CustomButton(
+                              onTap: () => openInNewTab(projects.webLink!),
+                              buttonName: "Web",),
                           )
                       ),
                     ],

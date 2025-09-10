@@ -4,6 +4,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:portfolio/core/states.dart';
 import 'package:portfolio/features/sidebar/view/widgets/row_information_widget.dart';
 import '../../../../core/app_constants.dart';
+import '../../../../core/methods.dart';
 import '../../../../core/styles/colors.dart';
 import '../../../../core/widgets/border_style.dart';
 import '../../../../core/widgets/custom_text.dart';
@@ -78,11 +79,13 @@ class _DesktopSidebarState extends State<DesktopSidebar> {
                 const SizedBox(height: 12),
                 RowInformationWidget(
                   stringIcon: "in",
-                  value: personalInfo!.linkedIn,
+                  value: "LinkedIn",
+                  onTap: ()=> openInNewTab(personalInfo!.linkedIn),
                 ),
                 const SizedBox(height: 12),
                 RowInformationWidget(
-                  value: personalInfo!.gitHub,
+                  value: "GitHub",
+                  onTap: ()=> openInNewTab(personalInfo!.gitHub),
                 ),
               ],
             ),

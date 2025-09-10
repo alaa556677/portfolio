@@ -7,13 +7,16 @@ class RowInformationWidget extends StatelessWidget {
   final IconData? icon;
   final String value;
   final String? stringIcon;
+  final void Function()? onTap;
 
   const RowInformationWidget({
     super.key,
     this.icon,
     required this.value,
-    this.stringIcon
+    this.stringIcon,
+    this.onTap
   });
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -36,10 +39,13 @@ class RowInformationWidget extends StatelessWidget {
           ): icon != null ? Icon(icon, color: AppColors.textSecondaryColor(context), size: 20,) : Image.asset("assets/images/github.png", color: AppColors.textSecondaryColor(context), width: 20, height: 20,),
         ),
         SizedBox(width: 12,),
-        CustomTextWidget(
-          text: value,
-          // fontColor: Colors.white,
-          fontSize: AppConstants.personalInformationFontSize,
+        InkWell(
+          onTap: onTap,
+          child: CustomTextWidget(
+            text: value,
+            // fontColor: Colors.white,
+            fontSize: AppConstants.personalInformationFontSize,
+          ),
         ),
       ],
     );
