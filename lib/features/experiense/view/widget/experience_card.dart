@@ -46,7 +46,12 @@ class ExperienceCard extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         padding: EdgeInsetsDirectional.symmetric(horizontal: 8, vertical: 4),
-                        child: CustomTextWidget(text: "current", fontSize: AppConstants.personalInformationFontSize, fontColor: AppColors.textTransparent,),
+                        child: CustomTextWidget(
+                          text: "Current",
+                          fontSize: AppConstants.personalInformationFontSize,
+                          fontColor: AppColors.textTransparent,
+                          fontWeight: FontWeight.w700
+                        ),
                       )
                     ]
                   ],
