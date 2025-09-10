@@ -33,7 +33,7 @@ class FeatureWidget extends StatelessWidget {
               text: title,
               fontColor: titleColor ?? AppColors.textSecondaryColor(context),
               fontSize: fontSize ??  AppConstants.subTitleFontSize,
-              fontWeight: FontWeight.w600,
+              fontWeight: titleColor != null ? FontWeight.w600 : FontWeight.w400,
             ),
           ],
         ),

@@ -170,10 +170,9 @@ class _AboutPageState extends State<AboutPage> {
                     Container(
                       width: 46,
                       height: 46,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        image: DecorationImage(image: AssetImage("assets/images/universityLogo.png"))
-                      ),
+                      alignment: Alignment.center,
+                      decoration: getBorderStyle(context, radius: 8, containerColor: AppColors.textSecondaryColor(context)),
+                      child: CustomTextWidget(text: "CS", fontSize: AppConstants.titleFontSize, fontColor: AppColors.textTransparent,),
                     ),
                     SizedBox(width: 16,),
                     Expanded(

@@ -115,7 +115,6 @@ class ExperienceCard extends StatelessWidget {
                 FeatureWidget(
                   title: "Personal Interests",
                   isSubTitle: false,
-                  titleColor: AppColors.textSecondaryColor(context),
                   fontSize: AppConstants.tabTitleFontSize,
                   widgetValue: Wrap(
                     runSpacing: 12,

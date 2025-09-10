@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:portfolio/features/home_screen/controller/home_controller.dart';
 import '../../../../core/app_constants.dart';
+import '../../../../core/styles/colors.dart';
+import '../../../../core/widgets/border_style.dart';
 import '../../../../core/widgets/custom_text.dart';
 import '../../../../core/widgets/divider_widget.dart';
 import '../../../about/view/about_page.dart';
@@ -38,13 +40,7 @@ class _DesktopLayoutState extends State<DesktopLayout> with SingleTickerProvider
             child: Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 30, vertical: 50),
               child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(
-                    color: Theme.of(context).colorScheme.outline.withOpacity(0.2),
-                    width: 2,
-                  ),
-                ),
+                decoration: getBorderStyle(context),
                 child: Column(
                   children: [
                     Row(

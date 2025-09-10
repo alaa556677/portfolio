@@ -13,12 +13,13 @@ class HomeScreen extends StatelessWidget {
           return Container(
             width: MediaQuery.of(context).size.width,
             alignment: Alignment.center,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
+              // color: AppColors.blackColor.withOpacity(.85),
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                colors: [Colors.black, AppColors.primaryColor],
-                stops: [0.2, 1],
+                colors: [AppColors.gradientColor1,AppColors.gradientColor2],
+                stops: [0.6, 1],
               ),
             ),
             child: DesktopLayout()
