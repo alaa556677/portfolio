@@ -23,8 +23,8 @@ class _ContactScreenState extends State<ContactScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   TextEditingController messageController = TextEditingController();
+  TextEditingController subjectController = TextEditingController();
   var formKey = GlobalKey <FormState> ();
-  final ContactController contactController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +35,18 @@ class _ContactScreenState extends State<ContactScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            CustomTextFormField(
+              controller: subjectController,
+              hintText: "Subject title",
+              prefix: Icons.title,
+              validator: (value){
+                if (value == null || value.toString().isEmpty) {
+                  return "Required";
+                }
+                return null;
+              },
+            ),
+            SizedBox(height: 20,),
             CustomTextFormField(
               controller: nameController,
               hintText: "Full Name",
@@ -87,18 +99,17 @@ class _ContactScreenState extends State<ContactScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Obx(() => contactController.sendStates.value == RequestState.loading ? LoadingWidget() : InkWell(
-                  onTap: (){
-                    // if(formKey.currentState!.validate()){
-                    //   contactController.sendEmail(
-                    //     SendEmailModel(
-                    //       name: nameController.text,
-                    //       email: emailController.text,
-                    //       phone: phoneController.text,
-                    //       message: messageController.text
-                    //     )
-                    //   );
-                    // }
+                InkWell(
+                  onTap: () async {
+                    if(formKey.currentState!.validate()){
+                      await EmailService.sendPortfolioEmail(
+                        name: nameController.text,
+                        email: emailController.text,
+                        phone: phoneController.text,
+                        message: messageController.text,
+                        subject: subjectController.text
+                      );
+                    }
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -120,7 +131,7 @@ class _ContactScreenState extends State<ContactScreen> {
                       ],
                     ),
                   ),
-                ))
+                )
               ],
             )
           ],

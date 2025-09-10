@@ -37,6 +37,7 @@ dependencies:
   get:
   url_launcher:
   flutter_staggered_grid_view:
+  emailjs:
 
 dev_dependencies:
   flutter_test:

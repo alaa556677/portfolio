@@ -14,6 +14,5 @@ class PortfolioBinding implements Bindings{
     Get.put(AboutController(), permanent: true);
     Get.put(ExperienceController(), permanent: true);
     Get.put(ProjectController(), permanent: true);
-    Get.put(ContactController(), permanent: true);
   }
 }

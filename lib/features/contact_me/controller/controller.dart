@@ -1,37 +1,37 @@
-import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
-import '../../../core/states.dart';
-import '../model/send_email_model.dart';
+import 'package:emailjs/emailjs.dart' as emailjs;
 
-class ContactController extends GetxController{
-  var sendStates = RequestState.initial.obs;
-  Future<void> sendEmail(SendEmailModel sendEmailMessage) async {
-    try{
-      sendStates.value = RequestState.loading;
-      final Uri emailUri = Uri(
-        scheme: 'mailto',
-        path: 'alaabaker166@gmail.com', // حط ايميلك هنا
-        queryParameters: {
-          'subject': 'Portfolio Message',
-          'body': '''
-            Name: ${sendEmailMessage.name}
-            Email: ${sendEmailMessage.email}
-            Phone: ${sendEmailMessage.phone}
-            Message: ${sendEmailMessage.message}
-        ''',
-        },
-      );
-      if(await canLaunchUrl(emailUri)) {
-        await launchUrl(emailUri);
-        sendStates.value = RequestState.success;
-      }else{
-        sendStates.value = RequestState.error;
-        throw 'Could not launch $emailUri';
-      }
-    }catch(e){
-      sendStates.value = RequestState.error;
-      throw Exception("Failed to load personal info: $e");
+class EmailService {
+  static void init() {
+    emailjs.init(const emailjs.Options(
+      publicKey: 'uMlUbYEjnq3u8K5-v',
+    ));
+  }
+
+  static Future<bool> sendPortfolioEmail({
+    required String subject,
+    required String name,
+    required String email,
+    required String phone,
+    required String message,
+  }) async {
+    final templateParams = {
+      'title': subject,        // {{title}}
+      'name': name,            // {{name}}
+      'from_name': name,       // {{from_name}}
+      'from_email': email,     // {{from_email}}
+      'time': "${DateTime.now().day}-${DateTime.now().month}-${DateTime.now().year} "
+          "${DateTime.now().hour}:${DateTime.now().minute}", // {{time}}
+      'message': message,      // {{message}}
+      'phone': phone,          // {{phone}}
+    };
+
+
+    try {
+      await emailjs.send("service_dojygha", "template_zt2lfka", templateParams);
+      return true;
+    } catch (error) {
+      print('EmailJS error: $error');
+      return false;
     }
-
   }
 }
