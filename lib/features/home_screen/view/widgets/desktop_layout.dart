@@ -9,6 +9,7 @@ import '../../../../core/widgets/custom_text.dart';
 import '../../../../core/widgets/divider_widget.dart';
 import '../../../about/view/about_page.dart';
 import '../../../experiense/view/experience_page.dart';
+import '../../../projects/view/projects_page.dart';
 import '../../../sidebar/view/personal_sidebar.dart';
 
 class DesktopLayout extends StatefulWidget {
@@ -101,7 +102,7 @@ class _DesktopLayoutState extends State<DesktopLayout> with SingleTickerProvider
                         children: [
                           AboutPage(),
                           ExperiencePage(),
-                          Text("Projects"),
+                          ProjectPage(),
                           Text("Contact me"),
                         ]
                       )

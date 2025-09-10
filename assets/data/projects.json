@@ -1,0 +1,120 @@
+{
+  "projects" : [
+    {
+      "projectName" : "Dexef POS",
+      "imageUrl" : "assets/images/pos.png",
+      "imagePaths" : [
+        "",
+        ""
+      ],
+      "googleLink" : "https://play.google.com/store/apps/details?id=com.dexef.dexef_one_pro_flutter&pli=1",
+      "appleLink" : "https://apps.apple.com/us/app/dexef-pos/id1618652580",
+      "webLink" : "",
+      "information" : [
+        "Enterprise POS system managing sales, purchases, returns, expense tracking, and reporting.",
+        "Optimized invoice processing for 10K+ monthly transactions.",
+        "Reduced system load time by 20% via query optimization."
+      ]
+    },
+    {
+      "projectName" : "Dexef Ticket",
+      "imageUrl" : "assets/images/ticket.png",
+      "imagePaths" : [
+        "",
+        ""
+      ],
+      "googleLink" : "https://play.google.com/store/apps/details?id=com.dexef.dexef_ticket",
+      "appleLink" : "https://apps.apple.com/us/app/dexef-tickets/id6474759331",
+      "webLink" : "",
+      "information" : [
+        "Airline ticket booking & financial management platform.",
+        "Implemented real-time chat and secure transaction tracking."
+      ]
+    },
+    {
+      "projectName" : "Alketab",
+      "imageUrl" : "assets/images/alketab.png",
+      "imagePaths" : [
+        "",
+        ""
+      ],
+      "googleLink" : "https://play.google.com/store/apps/details?id=com.dexef.qetaby&hl=ar",
+      "appleLink" : "https://apps.apple.com/us/app/%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8-%D8%A7%D9%84%D9%82%D8%B1%D8%A2%D9%86-%D8%A7%D9%84%D9%83%D8%B1%D9%8A%D9%85/id1635131408",
+      "webLink" : "",
+      "information" : [
+        "Islamic lifestyle app with Quran recitation, prayer times, reminders, and localization.",
+        "Enabled multi-language support (Arabic, English, French)."
+      ]
+    },
+    {
+      "projectName" : "Hadith",
+      "imageUrl" : "assets/images/hadith.png",
+      "imagePaths" : [
+        "",
+        ""
+      ],
+      "googleLink" : "https://play.google.com/store/apps/details?id=com.dexef.hadith&pcampaignid=web_share",
+      "appleLink" : "",
+      "webLink" : "",
+      "information" : [
+        "Hadith collection with offline access, modern UI, and seamless navigation."
+      ]
+    },
+    {
+      "projectName" : "My Dexef",
+      "imageUrl" : "",
+      "imagePaths" : [
+        "",
+        ""
+      ],
+      "googleLink" : "",
+      "appleLink" : "",
+      "webLink" : "https://my.dexef.com/download-center",
+      "information" : [
+        "Flutter web app for managing Dexef accounts, devices, and workspaces."
+      ]
+    },
+    {
+      "projectName" : "Nine AM",
+      "imageUrl" : "assets/images/9am.png",
+      "imagePaths" : [
+        "",
+        ""
+      ],
+      "googleLink" : "",
+      "appleLink" : "",
+      "webLink" : "https://am9.dexef.com/",
+      "information" : [
+        "Restaurant management system with bill payments, order tracking, cashier operations, and offline-first architecture, achieving 25% operational efficiency improvement through multi-user permissions and custom templates."
+      ]
+    },
+    {
+      "projectName" : "Hawalyk",
+      "imageUrl" : "",
+      "imagePaths" : [
+        "",
+        ""
+      ],
+      "googleLink" : "https://play.google.com/store/apps/details?id=com.objecttech.hawalyk",
+      "appleLink" : "",
+      "webLink" : "",
+      "information" : [
+        "Multi-service marketplace platform combining clinics, restaurants, and clothing stores. Enables merchants to register as sellers, list products, and reach a wider audience, while customers can browse and order services/products from any location."
+      ]
+    },
+    {
+      "projectName" : "Vminds",
+      "imageUrl" : "",
+      "imagePaths" : [
+        "",
+        ""
+      ],
+      "googleLink" : "",
+      "appleLink" : "",
+      "webLink" : "",
+      "information" : [
+        "AI tools app for image, music, and audio generation."
+      ]
+    }
+  ]
+}
