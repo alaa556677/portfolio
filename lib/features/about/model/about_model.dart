@@ -9,6 +9,7 @@ class AboutModel {
   final List<String> testing;
   final List<String> otherSkills;
   final List<String> interests;
+  final List<Languages>? languages;
 
   AboutModel({
     required this.about,
@@ -21,6 +22,7 @@ class AboutModel {
     required this.testing,
     required this.otherSkills,
     required this.interests,
+    required this.languages
   });
 
   factory AboutModel.fromJson(Map<String, dynamic> json) {
@@ -35,6 +37,7 @@ class AboutModel {
       testing: (json["testing"] as List<dynamic>).map((e) => e as String).toList(),
       otherSkills: (json["otherSkills"] as List<dynamic>).map((e) => e as String).toList(),
       interests: (json["interests"] as List<dynamic>).map((e) => e as String).toList(),
+      languages: json["languages"] != null ? (json["languages"] as List<dynamic>).map((e) => Languages.fromJson(e as Map<String, dynamic>)).toList() : null,
     );
   }
 }
@@ -51,6 +54,20 @@ class Education {
       title: json["title"],
       location: json["location"],
       year: json["year"],
+    );
+  }
+}
+
+class Languages {
+  String? language;
+  String? level;
+
+  Languages({this.language, this.level});
+
+  factory Languages.fromJson(Map<String, dynamic> json) {
+    return Languages(
+      language: json["language"],
+      level: json["level"],
     );
   }
 }

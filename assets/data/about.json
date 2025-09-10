@@ -57,5 +57,15 @@
     "Travel",
     "Coffee",
     "Reading"
+  ],
+  "languages": [
+    {
+      "language" : "English",
+      "level" : "Good"
+    },
+    {
+      "language" : "Arabic",
+      "level" : "Native"
+    }
   ]
 }

@@ -3,10 +3,7 @@
     {
       "projectName" : "Dexef POS",
       "imageUrl" : "assets/images/pos.png",
-      "imagePaths" : [
-        "",
-        ""
-      ],
+      "imagePaths" : [],
       "googleLink" : "https://play.google.com/store/apps/details?id=com.dexef.dexef_one_pro_flutter&pli=1",
       "appleLink" : "https://apps.apple.com/us/app/dexef-pos/id1618652580",
       "webLink" : "",
@@ -19,10 +16,7 @@
     {
       "projectName" : "Dexef Ticket",
       "imageUrl" : "assets/images/ticket.png",
-      "imagePaths" : [
-        "",
-        ""
-      ],
+      "imagePaths" : [],
       "googleLink" : "https://play.google.com/store/apps/details?id=com.dexef.dexef_ticket",
       "appleLink" : "https://apps.apple.com/us/app/dexef-tickets/id6474759331",
       "webLink" : "",
@@ -34,10 +28,7 @@
     {
       "projectName" : "Alketab",
       "imageUrl" : "assets/images/alketab.png",
-      "imagePaths" : [
-        "",
-        ""
-      ],
+      "imagePaths" : [],
       "googleLink" : "https://play.google.com/store/apps/details?id=com.dexef.qetaby&hl=ar",
       "appleLink" : "https://apps.apple.com/us/app/%D8%A7%D9%84%D9%83%D8%AA%D8%A7%D8%A8-%D8%A7%D9%84%D9%82%D8%B1%D8%A2%D9%86-%D8%A7%D9%84%D9%83%D8%B1%D9%8A%D9%85/id1635131408",
       "webLink" : "",
@@ -49,10 +40,7 @@
     {
       "projectName" : "Hadith",
       "imageUrl" : "assets/images/hadith.png",
-      "imagePaths" : [
-        "",
-        ""
-      ],
+      "imagePaths" : [],
       "googleLink" : "https://play.google.com/store/apps/details?id=com.dexef.hadith&pcampaignid=web_share",
       "appleLink" : "",
       "webLink" : "",
@@ -62,11 +50,8 @@
     },
     {
       "projectName" : "My Dexef",
-      "imageUrl" : "",
-      "imagePaths" : [
-        "",
-        ""
-      ],
+      "imageUrl" : "assets/images/mydexef.png",
+      "imagePaths" : [],
       "googleLink" : "",
       "appleLink" : "",
       "webLink" : "https://my.dexef.com/download-center",
@@ -77,10 +62,7 @@
     {
       "projectName" : "Nine AM",
       "imageUrl" : "assets/images/9am.png",
-      "imagePaths" : [
-        "",
-        ""
-      ],
+      "imagePaths" : [],
       "googleLink" : "",
       "appleLink" : "",
       "webLink" : "https://am9.dexef.com/",
@@ -90,11 +72,8 @@
     },
     {
       "projectName" : "Hawalyk",
-      "imageUrl" : "",
-      "imagePaths" : [
-        "",
-        ""
-      ],
+      "imageUrl" : "assets/images/defaultImage.png",
+      "imagePaths" : [],
       "googleLink" : "https://play.google.com/store/apps/details?id=com.objecttech.hawalyk",
       "appleLink" : "",
       "webLink" : "",
@@ -104,11 +83,8 @@
     },
     {
       "projectName" : "Vminds",
-      "imageUrl" : "",
-      "imagePaths" : [
-        "",
-        ""
-      ],
+      "imageUrl" : "assets/images/defaultImage.png",
+      "imagePaths" : [],
       "googleLink" : "",
       "appleLink" : "",
       "webLink" : "",

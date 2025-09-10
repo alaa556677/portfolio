@@ -215,6 +215,32 @@ class _AboutPageState extends State<AboutPage> {
                 children: aboutModel!.interests.map((e) => SkillCardWidget(text: e)).toList(),
               ),
             ),
+            Padding(
+              padding: EdgeInsetsDirectional.symmetric(horizontal: 70, vertical: 20),
+              child: DividerWidget(),
+            ),
+            FeatureWidget(
+              title: "Languages",
+              isSubTitle: false,
+              titleColor: AppColors.textColor,
+              fontSize: AppConstants.titleFontSize,
+              widgetValue: Container(
+                decoration: getBorderStyle(context),
+                width: double.infinity,
+                padding: EdgeInsetsDirectional.symmetric(horizontal: 12, vertical: 6),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: aboutModel!.languages!.map((e) =>Padding(
+                    padding: EdgeInsetsDirectional.symmetric(vertical: 6),
+                    child: CustomTextWidget(
+                      text: "${e.language} : ${e.level}",
+                      fontColor: AppColors.textSecondaryColor(context),
+                      fontSize: AppConstants.educationalFontSize,
+                    ),
+                  )).toList(),
+                ),
+              ),
+            ),
             SizedBox(height: 12,),
           ],
         ),
