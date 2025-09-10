@@ -12,7 +12,11 @@ import '../controller/experience_controller.dart';
 import '../model/experience_model.dart';
 
 class ExperiencePage extends StatefulWidget {
-  const ExperiencePage({super.key});
+  final bool isMobile;
+  const ExperiencePage({
+    super.key,
+    this.isMobile = false
+  });
   @override
   State<ExperiencePage> createState() => _ExperiencePageState();
 }
@@ -48,7 +52,7 @@ class _ExperiencePageState extends State<ExperiencePage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: experienceModel!.experience.map((e) => Padding(
                   padding: EdgeInsetsDirectional.only(bottom: 20),
-                  child: ExperienceCard(experience: e),
+                  child: ExperienceCard(experience: e, isMobile: widget.isMobile,),
                 )).toList(),
               ),
             ),

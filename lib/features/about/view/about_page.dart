@@ -205,21 +205,6 @@ class _AboutPageState extends State<AboutPage> {
             ),
             SizedBox(height: 24,),
             FeatureWidget(
-              title: "Personal Interests",
-              isSubTitle: false,
-              titleColor: AppColors.textColor,
-              fontSize: AppConstants.titleFontSize,
-              widgetValue: Wrap(
-                runSpacing: 12,
-                spacing: 6,
-                children: aboutModel!.interests.map((e) => SkillCardWidget(text: e)).toList(),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.symmetric(horizontal: 70, vertical: 20),
-              child: DividerWidget(),
-            ),
-            FeatureWidget(
               title: "Languages",
               isSubTitle: false,
               titleColor: AppColors.textColor,
@@ -239,6 +224,21 @@ class _AboutPageState extends State<AboutPage> {
                     ),
                   )).toList(),
                 ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.symmetric(horizontal: 70, vertical: 20),
+              child: DividerWidget(),
+            ),
+            FeatureWidget(
+              title: "Personal Interests",
+              isSubTitle: false,
+              titleColor: AppColors.textColor,
+              fontSize: AppConstants.titleFontSize,
+              widgetValue: Wrap(
+                runSpacing: 12,
+                spacing: 6,
+                children: aboutModel!.interests.map((e) => SkillCardWidget(text: e)).toList(),
               ),
             ),
             SizedBox(height: 12,),

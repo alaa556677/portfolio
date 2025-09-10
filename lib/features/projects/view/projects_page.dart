@@ -36,15 +36,15 @@ class _ProjectPageState extends State<ProjectPage> {
   @override
   Widget build(BuildContext context) {
     return projectController.projectsStates.value == RequestState.success ? Padding(
-      padding: EdgeInsetsDirectional.symmetric(vertical: 16, horizontal: 20),
+      padding: EdgeInsetsDirectional.only(top: 30, start: 20, end: 20, bottom: 16),
       child: Center(
-        child: MasonryGridView.extent(
-          maxCrossAxisExtent: 360,
-          crossAxisSpacing: 30,
-          mainAxisSpacing: 30,
-          itemBuilder: (context, index) => ProjectCard(projects: projectsModel!.projects![index]),
-          itemCount: projectsModel!.projects!.length,
-        ),
+        child: SingleChildScrollView(
+          child: Wrap(
+            runSpacing: 30,
+            spacing: 30,
+            children: projectsModel!.projects!.map((e) => ProjectCard(projects: e)).toList(),
+          ),
+        )
       )
     ):LoadingWidget();
   }

@@ -9,7 +9,8 @@ import '../../model/experience_model.dart';
 
 class ExperienceCard extends StatelessWidget {
   final Experience? experience;
-  const ExperienceCard({super.key, required this.experience});
+  final bool isMobile;
+  const ExperienceCard({super.key, required this.experience, required this.isMobile});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,14 +20,16 @@ class ExperienceCard extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            width: 46,
-            height: 46,
-            alignment: Alignment.center,
-            decoration: getBorderStyle(context, radius: 8, containerColor: AppColors.textSecondaryColor(context)),
-            child: CustomTextWidget(text: experience!.company[0], fontSize: AppConstants.titleFontSize, fontColor: AppColors.textTransparent,),
-          ),
-          SizedBox(width: 20,),
+          if(!isMobile)...[
+            Container(
+              width: 46,
+              height: 46,
+              alignment: Alignment.center,
+              decoration: getBorderStyle(context, radius: 8, containerColor: AppColors.textSecondaryColor(context)),
+              child: CustomTextWidget(text: experience!.company[0], fontSize: AppConstants.titleFontSize, fontColor: AppColors.textTransparent,),
+            ),
+            SizedBox(width: 20,),
+          ],
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,6 +71,19 @@ class ExperienceCard extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 10,),
+                if(isMobile)...[
+                  Row(
+                    children: [
+                      Icon(Icons.access_time, color: AppColors.textSecondaryColor(context), size: 18,),
+                      SizedBox(width: 6,),
+                      CustomTextWidget(
+                        text: "${experience!.dateFrom} - ${experience!.dateTo}",
+                        fontSize: AppConstants.tabTitleFontSize,
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 10,),
+                ],
                 Row(
                   children: [
                     Icon(Icons.location_on, color: AppColors.textSecondaryColor(context), size: 18,),
@@ -76,13 +92,15 @@ class ExperienceCard extends StatelessWidget {
                       text: experience!.location,
                       fontSize: AppConstants.tabTitleFontSize,
                     ),
-                    SizedBox(width: 30,),
-                    Icon(Icons.access_time, color: AppColors.textSecondaryColor(context), size: 18,),
-                    SizedBox(width: 6,),
-                    CustomTextWidget(
-                      text: "${experience!.dateFrom} - ${experience!.dateTo}",
-                      fontSize: AppConstants.tabTitleFontSize,
-                    ),
+                    if(!isMobile)...[
+                      SizedBox(width: 30,),
+                      Icon(Icons.access_time, color: AppColors.textSecondaryColor(context), size: 18,),
+                      SizedBox(width: 6,),
+                      CustomTextWidget(
+                        text: "${experience!.dateFrom} - ${experience!.dateTo}",
+                        fontSize: AppConstants.tabTitleFontSize,
+                      ),
+                    ]
                   ],
                 ),
                 SizedBox(height: 14,),
@@ -118,7 +136,7 @@ class ExperienceCard extends StatelessWidget {
                 ),
                 SizedBox(height: 14,),
                 FeatureWidget(
-                  title: "Personal Interests",
+                  title: "Technology Used",
                   isSubTitle: false,
                   fontSize: AppConstants.tabTitleFontSize,
                   widgetValue: Wrap(
