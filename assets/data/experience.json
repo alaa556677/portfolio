@@ -1,0 +1,80 @@
+{
+  "experience" : [
+    {
+      "jobTitle" : "Senior Flutter Developer",
+      "company" : "Dexef ERP",
+      "location" : "Qwesna - Menofia",
+      "dateFrom" : "Mars in 2023",
+      "dateTo" : "current",
+      "skills" : [
+        "Collaborated with a 4+ developer team to refactor core modules, reducing app crashes by 30% and improving user retention",
+        "Developed new POS, ticketing, and financial modules, handling 10K+ monthly transactions.",
+        "Integrated real-time chat using SignalR and optimized database queries for 20% faster load times",
+        "Enhanced UI/UX for enterprise clients, improving feature adoption rates by 15%."
+      ],
+      "technology" : [
+        "Bloc/cubit",
+        "Clean architecture",
+        "Github",
+        "Xcode",
+        "Dio",
+        "Firebase",
+        "Hive",
+        "SqfLite"
+      ]
+    },
+    {
+      "jobTitle" : "Part-Time Senior Flutter Developer",
+      "company" : "Yapoey Company",
+      "location" : "South Korea",
+      "dateFrom" : "Feb 2024",
+      "dateTo" : "Jun 2024",
+      "skills" : [
+        "Engineered cross-platform features, increasing delivery efficiency by 25%.",
+        "Implemented responsive design and localization for multilingual user base."
+      ],
+      "technology" : [
+        "Bloc",
+        "Clean architecture",
+        "Github",
+        "Xcode"
+      ]
+    },
+    {
+      "jobTitle" : "Freelance Flutter Developer",
+      "company" : "Freelancer",
+      "location" : "Online",
+      "dateFrom" : "Oct 2022",
+      "dateTo" : "Current",
+      "skills" : [
+        "Delivered 5+ client applications using Flutter and Firebase with a focus on performance optimization.",
+        "Built AI-powered tools, POS systems, e-commerce apps, and kitchen management solutions."
+      ],
+      "technology" : [
+        "Bloc/cubit",
+        "Clean architecture",
+        "Github",
+        "Xcode",
+        "GetX",
+        "retrofit",
+        "Dio"
+      ]
+    },
+    {
+      "jobTitle" : "Software Technical Support",
+      "company" : "Pioneers Company",
+      "location" : "Shebin Elkom - Menofia",
+      "dateFrom" : "Jun 2022",
+      "dateTo" : "Feb 2023",
+      "skills" : [
+        "Resolved 150+ tickets/month, reducing average resolution time by 35%.",
+        "Improved customer satisfaction through proactive issue prevention strategies."
+      ],
+      "technology" : [
+        "Sql",
+        "Anydesk",
+        "It help desk"
+      ]
+    }
+  ]
+}
