@@ -1,3 +1,4 @@
+import 'package:emailjs/emailjs.dart' as emailjs;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -8,7 +9,10 @@ import 'features/home_screen/view/home_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  EmailService.init();
+  emailjs.init(const emailjs.Options(
+    publicKey: 'uMlUbYEjnq3u8K5-v',
+    privateKey: '7urqGl-AAhOGpIdyS-OrG',
+  ));
   runApp(const MyApp());
 }
 

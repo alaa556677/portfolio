@@ -19,12 +19,8 @@ class ContactScreen extends StatefulWidget {
 }
 
 class _ContactScreenState extends State<ContactScreen> {
-  TextEditingController nameController = TextEditingController();
-  TextEditingController emailController = TextEditingController();
-  TextEditingController phoneController = TextEditingController();
-  TextEditingController messageController = TextEditingController();
-  TextEditingController subjectController = TextEditingController();
   var formKey = GlobalKey <FormState> ();
+  final ContactController contactController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -36,19 +32,7 @@ class _ContactScreenState extends State<ContactScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomTextFormField(
-              controller: subjectController,
-              hintText: "Subject title",
-              prefix: Icons.title,
-              validator: (value){
-                if (value == null || value.toString().isEmpty) {
-                  return "Required";
-                }
-                return null;
-              },
-            ),
-            SizedBox(height: 20,),
-            CustomTextFormField(
-              controller: nameController,
+              controller: contactController.nameController,
               hintText: "Full Name",
               prefix: Icons.person,
               validator: (value){
@@ -60,7 +44,7 @@ class _ContactScreenState extends State<ContactScreen> {
             ),
             SizedBox(height: 20,),
             CustomTextFormField(
-              controller: emailController,
+              controller: contactController.emailController,
               hintText: "Email",
               prefix: Icons.email,
               validator: (value){
@@ -72,7 +56,7 @@ class _ContactScreenState extends State<ContactScreen> {
             ),
             SizedBox(height: 20,),
             CustomTextFormField(
-              controller: phoneController,
+              controller: contactController.phoneController,
               hintText: "Phone",
               prefix: Icons.phone_android,
               validator: (value){
@@ -84,7 +68,7 @@ class _ContactScreenState extends State<ContactScreen> {
             ),
             SizedBox(height: 20,),
             CustomTextFormField(
-              controller: messageController,
+              controller: contactController.messageController,
               hintText: "Write message",
               prefix: Icons.message,
               minLines: 5,
@@ -99,15 +83,17 @@ class _ContactScreenState extends State<ContactScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                InkWell(
+                Obx(()=> contactController.emailStates.value == RequestState.loading ? Padding(
+                  padding: EdgeInsetsDirectional.only(end: 14),
+                  child: LoadingWidget(),
+                ) : InkWell(
                   onTap: () async {
                     if(formKey.currentState!.validate()){
-                      await EmailService.sendPortfolioEmail(
-                        name: nameController.text,
-                        email: emailController.text,
-                        phone: phoneController.text,
-                        message: messageController.text,
-                        subject: subjectController.text
+                      await contactController.sendPortfolioEmail(
+                        name: contactController.nameController.text,
+                        email: contactController.emailController.text,
+                        phone: contactController.phoneController.text,
+                        message: contactController.messageController.text,
                       );
                     }
                   },
@@ -131,7 +117,7 @@ class _ContactScreenState extends State<ContactScreen> {
                       ],
                     ),
                   ),
-                )
+                ))
               ],
             )
           ],
