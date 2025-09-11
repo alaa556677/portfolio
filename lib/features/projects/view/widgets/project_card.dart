@@ -102,6 +102,16 @@ class ProjectCard extends StatelessWidget {
                           )
                       ),
                     ],
+                    if(projects.webLink == "" && projects.appleLink == "" && projects.googleLink == "")...[
+                      Expanded(
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.symmetric(horizontal: 6),
+                            child: CustomButton(
+                              onTap: () => openInNewTab(projects.webLink!),
+                              buttonName: "Working on it",),
+                          )
+                      ),
+                    ]
                   ],
                 ),
               ],

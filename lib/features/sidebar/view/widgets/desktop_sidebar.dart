@@ -43,8 +43,8 @@ class _DesktopSidebarState extends State<DesktopSidebar> {
             padding: EdgeInsets.all(24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const SizedBox(height: 16),
                 Container(
                   width: 200,
                   height: 200,
