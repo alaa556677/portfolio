@@ -107,7 +107,7 @@ class ProjectCard extends StatelessWidget {
                           child: Padding(
                             padding: EdgeInsetsDirectional.symmetric(horizontal: 6),
                             child: CustomButton(
-                              onTap: () => openInNewTab(projects.webLink!),
+                              onTap: (){},
                               buttonName: "Working on it",),
                           )
                       ),
