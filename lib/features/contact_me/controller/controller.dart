@@ -4,6 +4,7 @@ class EmailService {
   static void init() {
     emailjs.init(const emailjs.Options(
       publicKey: 'uMlUbYEjnq3u8K5-v',
+      privateKey: '7urqGl-AAhOGpIdyS-OrG',
     ));
   }
 
@@ -19,8 +20,7 @@ class EmailService {
       'name': name,            // {{name}}
       'from_name': name,       // {{from_name}}
       'from_email': email,     // {{from_email}}
-      'time': "${DateTime.now().day}-${DateTime.now().month}-${DateTime.now().year} "
-          "${DateTime.now().hour}:${DateTime.now().minute}", // {{time}}
+      'time': "${DateTime.now().day}-${DateTime.now().month}-${DateTime.now().year} ${DateTime.now().hour}:${DateTime.now().minute}", // {{time}}
       'message': message,      // {{message}}
       'phone': phone,          // {{phone}}
     };
