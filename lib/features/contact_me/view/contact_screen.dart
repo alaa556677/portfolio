@@ -26,101 +26,103 @@ class _ContactScreenState extends State<ContactScreen> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsetsDirectional.symmetric(vertical: 24, horizontal: 20),
-      child: Form(
-        key: formKey,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CustomTextFormField(
-              controller: contactController.nameController,
-              hintText: "Full Name",
-              prefix: Icons.person,
-              validator: (value){
-                if (value == null || value.toString().isEmpty) {
-                  return "Required";
-                }
-                return null;
-              },
-            ),
-            SizedBox(height: 20,),
-            CustomTextFormField(
-              controller: contactController.emailController,
-              hintText: "Email",
-              prefix: Icons.email,
-              validator: (value){
-                if (value == null || value.toString().isEmpty) {
-                  return "Required";
-                }
-                return null;
-              },
-            ),
-            SizedBox(height: 20,),
-            CustomTextFormField(
-              controller: contactController.phoneController,
-              hintText: "Phone",
-              prefix: Icons.phone_android,
-              validator: (value){
-                if (value == null || value.toString().isEmpty) {
-                  return "Required";
-                }
-                return null;
-              },
-            ),
-            SizedBox(height: 20,),
-            CustomTextFormField(
-              controller: contactController.messageController,
-              hintText: "Write message",
-              prefix: Icons.message,
-              minLines: 5,
-              validator: (value){
-                if (value == null || value.toString().isEmpty) {
-                  return "Required";
-                }
-                return null;
-              },
-            ),
-            SizedBox(height: 30,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Obx(()=> contactController.emailStates.value == RequestState.loading ? Padding(
-                  padding: EdgeInsetsDirectional.only(end: 14),
-                  child: LoadingWidget(),
-                ) : InkWell(
-                  onTap: () async {
-                    if(formKey.currentState!.validate()){
-                      await contactController.sendPortfolioEmail(
-                        name: contactController.nameController.text,
-                        email: contactController.emailController.text,
-                        phone: contactController.phoneController.text,
-                        message: contactController.messageController.text,
-                      );
-                    }
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: AppColors.textSecondaryColor(context),
-                      borderRadius: BorderRadius.circular(8),
+      child: SingleChildScrollView(
+        child: Form(
+          key: formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomTextFormField(
+                controller: contactController.nameController,
+                hintText: "Full Name",
+                prefix: Icons.person,
+                validator: (value){
+                  if (value == null || value.toString().isEmpty) {
+                    return "Required";
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(height: 20,),
+              CustomTextFormField(
+                controller: contactController.emailController,
+                hintText: "Email",
+                prefix: Icons.email,
+                validator: (value){
+                  if (value == null || value.toString().isEmpty) {
+                    return "Required";
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(height: 20,),
+              CustomTextFormField(
+                controller: contactController.phoneController,
+                hintText: "Phone",
+                prefix: Icons.phone_android,
+                validator: (value){
+                  if (value == null || value.toString().isEmpty) {
+                    return "Required";
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(height: 20,),
+              CustomTextFormField(
+                controller: contactController.messageController,
+                hintText: "Write message",
+                prefix: Icons.message,
+                minLines: 5,
+                validator: (value){
+                  if (value == null || value.toString().isEmpty) {
+                    return "Required";
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(height: 30,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Obx(()=> contactController.emailStates.value == RequestState.loading ? Padding(
+                    padding: EdgeInsetsDirectional.only(end: 14),
+                    child: LoadingWidget(),
+                  ) : InkWell(
+                    onTap: () async {
+                      if(formKey.currentState!.validate()){
+                        await contactController.sendPortfolioEmail(
+                          name: contactController.nameController.text,
+                          email: contactController.emailController.text,
+                          phone: contactController.phoneController.text,
+                          message: contactController.messageController.text,
+                        );
+                      }
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: AppColors.textSecondaryColor(context),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      padding: EdgeInsetsDirectional.symmetric(horizontal: 20, vertical: 8),
+                      alignment: Alignment.center,
+                      child: Row(
+                        children: [
+                          CustomTextWidget(
+                            text: "Send",
+                            fontSize: AppConstants.personalInformationFontSize,
+                            fontColor: AppColors.textTransparent,
+                            fontWeight: FontWeight.w800,
+                          ),
+                          SizedBox(width: 6,),
+                          Icon(Icons.send, size: 16, color: AppColors.textTransparent,)
+                        ],
+                      ),
                     ),
-                    padding: EdgeInsetsDirectional.symmetric(horizontal: 20, vertical: 8),
-                    alignment: Alignment.center,
-                    child: Row(
-                      children: [
-                        CustomTextWidget(
-                          text: "Send",
-                          fontSize: AppConstants.personalInformationFontSize,
-                          fontColor: AppColors.textTransparent,
-                          fontWeight: FontWeight.w800,
-                        ),
-                        SizedBox(width: 6,),
-                        Icon(Icons.send, size: 16, color: AppColors.textTransparent,)
-                      ],
-                    ),
-                  ),
-                ))
-              ],
-            )
-          ],
+                  ))
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
