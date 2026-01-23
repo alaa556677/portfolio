@@ -48,7 +48,8 @@ class _DesktopLayoutState extends State<DesktopLayout> with SingleTickerProvider
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        TabBar(controller: _tabController,
+                        TabBar(
+                          controller: _tabController,
                           isScrollable: true,
                           labelColor: Colors.white,
                           unselectedLabelColor: Colors.white,

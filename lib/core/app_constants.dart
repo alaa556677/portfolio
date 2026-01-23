@@ -10,8 +10,8 @@ class AppConstants {
 
   // Layout Constants
   static const double sidebarWidth = 360.0;
-  static const double sidebarWidthMobile = 280.0;
-  static const double headerHeight = 60.0;
+  // static const double sidebarWidthMobile = 280.0;
+  // static const double headerHeight = 60.0;
 
   // Animation Durations
   static const Duration shortAnimation = Duration(milliseconds: 200);
