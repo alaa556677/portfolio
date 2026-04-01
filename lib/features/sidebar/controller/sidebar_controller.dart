@@ -26,6 +26,7 @@ class SideBarController extends GetxController{
     try{
       downloadCVState.value = RequestState.loading;
       const filePath = 'assets/assets/docs/alaa_CV.pdf';
+      // ignore: unused_local_variable
       html.AnchorElement anchorElement = html.AnchorElement(href: filePath)
         ..download = "alaa_CV.pdf"
         ..click();

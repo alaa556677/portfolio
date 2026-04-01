@@ -6,7 +6,6 @@ import 'package:portfolio/features/experiense/view/widget/experience_card.dart';
 import '../../../core/app_constants.dart';
 import '../../../core/states.dart';
 import '../../../core/styles/colors.dart';
-import '../../../core/widgets/custom_text.dart';
 import '../../about/view/widgets/feature_widget.dart';
 import '../controller/experience_controller.dart';
 import '../model/experience_model.dart';

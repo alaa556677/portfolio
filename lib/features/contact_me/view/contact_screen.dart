@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:portfolio/core/states.dart';
-import 'package:portfolio/core/widgets/custom_button.dart';
 import 'package:portfolio/core/widgets/loading_widget.dart';
 import 'package:portfolio/core/widgets/text_field.dart';
-import 'package:portfolio/features/contact_me/model/send_email_model.dart';
 
 import '../../../core/app_constants.dart';
 import '../../../core/styles/colors.dart';

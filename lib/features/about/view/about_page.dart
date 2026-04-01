@@ -10,7 +10,6 @@ import 'package:portfolio/features/about/view/widgets/skill_card_widget.dart';
 import '../../../core/app_constants.dart';
 import '../../../core/states.dart';
 import '../../../core/widgets/border_style.dart';
-import '../../../core/widgets/custom_rich.dart';
 import '../controller/about_controller.dart';
 import 'widgets/feature_widget.dart';
 
