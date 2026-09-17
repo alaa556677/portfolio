@@ -1,32 +1,32 @@
 import 'package:emailjs/emailjs.dart' as emailjs;
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'core/app_routes.dart';
-import 'binding.dart';
-import 'features/home_screen/view/home_screen.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:my_reference/my_reference.dart';
+import 'package:portfolio/core/di/di.dart';
+import 'package:portfolio/core/widgets/portfolio_manager.dart';
+import 'package:portfolio/features/home_screen/view/home_screen.dart';
+import 'package:portfolio/l10n/app_localizations.dart';
 
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
+void main() async {
+  initialServices();
   emailjs.init(const emailjs.Options(
     publicKey: 'uMlUbYEjnq3u8K5-v',
     privateKey: '7urqGl-AAhOGpIdyS-OrG',
   ));
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Portfolio',
-      initialRoute: AppRoutes.homeScreen,
-      initialBinding: PortfolioBinding(),
-      debugShowCheckedModeBanner: false,
-      getPages: [
-        GetPage(name: AppRoutes.splashScreen, page: () => const HomeScreen())
-      ],
-    );
-  }
+  setupGetIT();
+  runApp(PortfolioManager.mainWidget(MainModel(
+     providers: [
+      BlocProvider<AppLocaleCubit>(create: (_) => getIt<AppLocaleCubit>())
+    ],
+    title: 'Mar7ba',
+    supportedLocales: AppLocalizations.supportedLocales,
+    localizationsDelegates: const [
+      AppLocalizations.delegate,
+      CountryLocalizations.delegate,
+      GlobalMaterialLocalizations.delegate,
+      GlobalCupertinoLocalizations.delegate,
+      GlobalWidgetsLocalizations.delegate,
+    ],
+    home: HomeScreen()
+  )));
 }

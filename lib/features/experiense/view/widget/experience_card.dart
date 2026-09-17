@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/app_constants.dart';
-import 'package:portfolio/core/styles/colors.dart';
-import 'package:portfolio/core/widgets/border_style.dart';
-import 'package:portfolio/core/widgets/custom_text.dart';
+import 'package:portfolio/core_old/app_constants.dart';
+import 'package:portfolio/core_old/styles/colors.dart';
+import 'package:portfolio/core_old/widgets/border_style.dart';
+import 'package:portfolio/core_old/widgets/custom_text.dart';
 import '../../../about/view/widgets/feature_widget.dart';
 import '../../../about/view/widgets/skill_card_widget.dart';
 import '../../model/experience_model.dart';

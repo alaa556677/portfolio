@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import '../../../core/states.dart';
+import '../../../core_old/states.dart';
 import '../model/projects_model.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;

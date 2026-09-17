@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:portfolio/features/experiense/model/experience_model.dart';
-import '../../../core/states.dart';
+import '../../../core_old/states.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/features/home_screen/view/widgets/desktop_layout.dart';
 import 'package:portfolio/features/home_screen/view/widgets/mobile_layout.dart';
 
-import '../../../core/app_constants.dart';
-import '../../../core/styles/colors.dart';
+import '../../../core_old/app_constants.dart';
+import '../../../core_old/styles/colors.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

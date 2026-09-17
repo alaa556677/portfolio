@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/widgets/border_style.dart';
-import '../../../../core/app_constants.dart';
-import '../../../../core/methods.dart';
-import '../../../../core/styles/colors.dart';
-import '../../../../core/widgets/container_image.dart';
-import '../../../../core/widgets/custom_button.dart';
-import '../../../../core/widgets/custom_text.dart';
+import 'package:portfolio/core/helpers/methods.dart';
+import 'package:portfolio/core_old/widgets/border_style.dart';
+import '../../../../core_old/app_constants.dart';
+import '../../../../core_old/styles/colors.dart';
+import '../../../../core_old/widgets/container_image.dart';
+import '../../../../core_old/widgets/custom_button.dart';
+import '../../../../core_old/widgets/custom_text.dart';
 import '../../model/projects_model.dart';
 
 class ProjectCard extends StatelessWidget {

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:portfolio/core/styles/colors.dart';
-import 'package:portfolio/core/widgets/custom_text.dart';
-import 'package:portfolio/core/widgets/divider_widget.dart';
-import 'package:portfolio/core/widgets/loading_widget.dart';
+import 'package:portfolio/core_old/styles/colors.dart';
+import 'package:portfolio/core_old/widgets/custom_text.dart';
+import 'package:portfolio/core_old/widgets/divider_widget.dart';
+import 'package:portfolio/core_old/widgets/loading_widget.dart';
 import 'package:portfolio/features/about/model/about_model.dart';
 import 'package:portfolio/features/about/view/widgets/skill_card_widget.dart';
-import '../../../core/app_constants.dart';
-import '../../../core/states.dart';
-import '../../../core/widgets/border_style.dart';
+import '../../../core_old/app_constants.dart';
+import '../../../core_old/states.dart';
+import '../../../core_old/widgets/border_style.dart';
 import '../controller/about_controller.dart';
 import 'widgets/feature_widget.dart';
 

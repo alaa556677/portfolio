@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import '../../../../core/app_constants.dart';
-import '../../../../core/widgets/custom_text.dart';
-import '../../../../core/widgets/divider_widget.dart';
+import '../../../../core_old/app_constants.dart';
+import '../../../../core_old/widgets/custom_text.dart';
+import '../../../../core_old/widgets/divider_widget.dart';
 import '../../../about/view/about_page.dart';
 import '../../../contact_me/view/contact_screen.dart';
 import '../../../experiense/view/experience_page.dart';

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:portfolio/core/widgets/loading_widget.dart';
+import 'package:portfolio/core_old/widgets/loading_widget.dart';
 import 'package:portfolio/features/projects/view/widgets/project_card.dart';
-import '../../../core/states.dart';
+import '../../../core_old/states.dart';
 import '../controller/project_controller.dart';
 import '../model/projects_model.dart';
 

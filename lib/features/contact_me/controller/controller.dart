@@ -1,6 +1,6 @@
 import 'package:emailjs/emailjs.dart' as emailjs;
 import 'package:get/get.dart';
-import '../../../core/states.dart';
+import '../../../core_old/states.dart';
 import 'package:flutter/material.dart';
 
 class ContactController extends GetxController{

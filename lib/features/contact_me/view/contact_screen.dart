@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:portfolio/core/states.dart';
-import 'package:portfolio/core/widgets/loading_widget.dart';
-import 'package:portfolio/core/widgets/text_field.dart';
+import 'package:portfolio/core_old/states.dart';
+import 'package:portfolio/core_old/widgets/loading_widget.dart';
+import 'package:portfolio/core_old/widgets/text_field.dart';
 
-import '../../../core/app_constants.dart';
-import '../../../core/styles/colors.dart';
-import '../../../core/widgets/custom_text.dart';
+import '../../../core_old/app_constants.dart';
+import '../../../core_old/styles/colors.dart';
+import '../../../core_old/widgets/custom_text.dart';
 import '../controller/controller.dart';
 
 class ContactScreen extends StatefulWidget {

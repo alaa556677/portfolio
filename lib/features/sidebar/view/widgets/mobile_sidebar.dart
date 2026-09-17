@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:portfolio/core/app_constants.dart';
-import 'package:portfolio/core/styles/colors.dart';
-import 'package:portfolio/core/widgets/custom_text.dart';
-import 'package:portfolio/core/widgets/loading_widget.dart';
-import '../../../../core/methods.dart';
-import '../../../../core/states.dart';
+import 'package:portfolio/core/helpers/methods.dart';
+import 'package:portfolio/core_old/app_constants.dart';
+import 'package:portfolio/core_old/styles/colors.dart';
+import 'package:portfolio/core_old/widgets/custom_text.dart';
+import 'package:portfolio/core_old/widgets/loading_widget.dart';
+import '../../../../core_old/states.dart';
 import '../../controller/sidebar_controller.dart';
 import '../../model/personal_info.dart';
 

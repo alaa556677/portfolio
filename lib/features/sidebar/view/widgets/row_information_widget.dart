@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../../core/app_constants.dart';
-import '../../../../core/styles/colors.dart';
-import '../../../../core/widgets/custom_text.dart';
+import '../../../../core_old/app_constants.dart';
+import '../../../../core_old/styles/colors.dart';
+import '../../../../core_old/widgets/custom_text.dart';
 
 class RowInformationWidget extends StatelessWidget {
   final IconData? icon;

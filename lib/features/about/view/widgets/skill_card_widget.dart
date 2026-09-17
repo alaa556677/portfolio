@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/styles/colors.dart';
-import '../../../../core/app_constants.dart';
-import '../../../../core/widgets/border_style.dart';
-import '../../../../core/widgets/custom_text.dart';
+import 'package:portfolio/core_old/styles/colors.dart';
+import '../../../../core_old/app_constants.dart';
+import '../../../../core_old/widgets/border_style.dart';
+import '../../../../core_old/widgets/custom_text.dart';
 
 class SkillCardWidget extends StatelessWidget {
   final String text;
