@@ -37,7 +37,7 @@ void initialDioAndService(){
 
 ////////////////////////////////////////////////////////////////////////////// cubit 
 void initialCubit(){
-  getIt.registerFactory(() => AppLocaleCubit());
+  getIt.registerFactory(() => AppLocaleCubit("en"));
   getIt.registerFactory(() => AboutCubit(getIt()));
   getIt.registerLazySingleton(() => ContactCubit(getIt()));
   getIt.registerFactory(() => ExperienceCubit(getIt()));

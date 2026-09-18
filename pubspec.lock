@@ -874,7 +874,7 @@ packages:
     description:
       path: "."
       ref: master
-      resolved-ref: da0b82d693e298f902ba41b2fc38f09effa79692
+      resolved-ref: e71c0b83ff4a0df870b8e7e3938ea042ebaf9490
       url: "https://github.com/alaa556677/my_reference.git"
     source: git
     version: "1.0.0"
