@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:portfolio/features/home_screen/controller/home_controller.dart';
-import '../../../../core_old/app_constants.dart';
-import '../../../../core_old/widgets/border_style.dart';
-import '../../../../core_old/widgets/custom_text.dart';
-import '../../../../core_old/widgets/divider_widget.dart';
+import 'package:my_reference/my_reference.dart';
+import 'package:portfolio/core/widgets/colors.dart';
+import 'package:portfolio/core/widgets/portfolio_manager.dart';
 import '../../../about/view/about_page.dart';
+import '../../../about/view/widgets/section_decorations.dart';
 import '../../../contact_me/view/contact_screen.dart';
 import '../../../experiense/view/experience_page.dart';
 import '../../../projects/view/projects_page.dart';
 import '../../../sidebar/view/personal_sidebar.dart';
+import '../../logic/home_cubit.dart';
 
 class DesktopLayout extends StatefulWidget {
   const DesktopLayout({super.key});
@@ -19,13 +17,13 @@ class DesktopLayout extends StatefulWidget {
 }
 
 class _DesktopLayoutState extends State<DesktopLayout> with SingleTickerProviderStateMixin{
-  final HomeController homeController = Get.find();
+  final HomeCubit homeCubit = getIt();
   late TabController _tabController;
   @override
   void initState() {
-    _tabController = TabController (length: 4, vsync: this, initialIndex: homeController.currentTabIndex.value);
+    _tabController = TabController (length: 4, vsync: this, initialIndex: homeCubit.state.currentTabIndex);
     _tabController.addListener(() {
-      homeController.changeTabBarIndex(_tabController.index);
+      homeCubit.changeTabBarIndex(_tabController.index);
     });
     super.initState();
   }
@@ -56,7 +54,7 @@ class _DesktopLayoutState extends State<DesktopLayout> with SingleTickerProvider
                           indicatorColor: Colors.white,
                           indicatorWeight: 2.5,
                           indicatorSize: TabBarIndicatorSize.tab,
-                          overlayColor: MaterialStateProperty.all(Colors.transparent),
+                          overlayColor: WidgetStateProperty.all(Colors.transparent),
                           labelStyle: TextStyle(
                               color: Colors.white
                           ),
@@ -66,31 +64,47 @@ class _DesktopLayoutState extends State<DesktopLayout> with SingleTickerProvider
                           tabs: [
                             Padding(
                               padding: EdgeInsetsDirectional.symmetric(vertical: 12),
-                              child: CustomTextWidget(
+                              child: PortfolioManager.text(TextModel(
                                 text: "About",
-                                fontSize: AppConstants.tabTitleFontSize,
-                              ),
+                                style: PortfolioManager.style(textType: TextTypes.bodyMedium14).copyWith(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  color: AppColors.textSecondary(context),
+                                ),
+                              )),
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.symmetric(vertical: 12),
-                              child: CustomTextWidget(
+                              child: PortfolioManager.text(TextModel(
                                 text: "Experience",
-                                fontSize: AppConstants.tabTitleFontSize,
-                              ),
+                                style: PortfolioManager.style(textType: TextTypes.bodyMedium14).copyWith(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  color: AppColors.textSecondary(context),
+                                ),
+                              )),
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.symmetric(vertical: 12),
-                              child: CustomTextWidget(
+                              child: PortfolioManager.text(TextModel(
                                 text: "Projects",
-                                fontSize: AppConstants.tabTitleFontSize,
-                              ),
+                                style: PortfolioManager.style(textType: TextTypes.bodyMedium14).copyWith(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  color: AppColors.textSecondary(context),
+                                ),
+                              )),
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.symmetric(vertical: 12),
-                              child: CustomTextWidget(
+                              child: PortfolioManager.text(TextModel(
                                 text: "Contact me",
-                                fontSize: AppConstants.tabTitleFontSize,
-                              ),
+                                style: PortfolioManager.style(textType: TextTypes.bodyMedium14).copyWith(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  color: AppColors.textSecondary(context),
+                                ),
+                              )),
                             ),
                           ],),
                         SizedBox(width: 20,)

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/core/widgets/colors.dart';
 import 'package:portfolio/features/home_screen/view/widgets/desktop_layout.dart';
 import 'package:portfolio/features/home_screen/view/widgets/mobile_layout.dart';
-
-import '../../../core_old/app_constants.dart';
-import '../../../core_old/styles/colors.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -23,7 +21,7 @@ class HomeScreen extends StatelessWidget {
         ),
         child: LayoutBuilder(
           builder: (context, constraints){
-            if (constraints.maxWidth < AppConstants.tabletBreakpoint) {
+            if (constraints.maxWidth < 1024) {
               return const MobileLayout();
             } else {
               return const DesktopLayout();

@@ -30,7 +30,7 @@ class PortfolioManager{
   static showBottomsheet(BottomsheetModel bottomsheetModel){
     return UdyTechWidgets.showBottomsheet(bottomsheetModel.copyWith(
       background: bottomsheetModel.background ?? AppColors.white,
-      lineColor: bottomsheetModel.lineColor ?? AppColors.backgroundCardGrey.withValues(alpha: .7)
+      lineColor: bottomsheetModel.lineColor ?? AppColors.white.withValues(alpha: .7)
     ));
   }
   ////////////////////////////////////////////////////////////////// Button
@@ -91,7 +91,7 @@ class PortfolioManager{
   ////////////////////////////////////////////////////////////////// image network
   static Widget imageNetwork(ImageNetworkModel imageNetworkModel){
     return UdyTechWidgets.imageNetwork(imageNetworkModel.copyWith(
-      iconErrorBackgroundColor: imageNetworkModel.iconErrorBackgroundColor ?? AppColors.grey
+      iconErrorBackgroundColor: imageNetworkModel.iconErrorBackgroundColor ?? AppColors.iconGrey
     ));
   }
   ////////////////////////////////////////////////////////////////// input label
@@ -116,9 +116,9 @@ class PortfolioManager{
     return UdyTechWidgets.mainWidget(mainModel);
   }
   ////////////////////////////////////////////////////////////////// no data 
-  static Widget noData({CustomNoDataModel? customNoDataContent}){
+  static Widget noData({CustomNoDataModel? customNoDataContent, required BuildContext context}){
     return UdyTechWidgets.noData(customNoDataContent?.copyWith(
-      style: customNoDataContent.style ?? style(textType: TextTypes.noDataTitle16).copyWith(color: AppColors.textSecondary, fontWeight: FontWeight.w700),
+      style: customNoDataContent.style ?? style(textType: TextTypes.noDataTitle16).copyWith(color: AppColors.textSecondary(context), fontWeight: FontWeight.w700),
       styleSubText: customNoDataContent.styleSubText ?? style(textType: TextTypes.bodyMedium14).copyWith(color: AppColors.textHint),
     ));
   }
@@ -162,7 +162,7 @@ class PortfolioManager{
   ////////////////////////////////////////////////////////////////// scaffold 
   static Widget scaffold(ScaffoldModel scaffoldModel){
     return UdyTechWidgets.scaffold(scaffoldModel.copyWith(
-      scaffoldBackground: scaffoldModel.scaffoldBackground ?? AppColors.scaffoldBackground,
+      scaffoldBackground: scaffoldModel.scaffoldBackground ?? AppColors.gradientColor1,
     ));
   }
   ////////////////////////////////////////////////////////////////// show toast 
@@ -211,9 +211,9 @@ class PortfolioManager{
   static Widget textForm(TextFormModel textFormModel){
     return UdyTechWidgets.textForm(textFormModel.copyWith(
       style: textFormModel.style ?? style(textType: TextTypes.formContent14),
-      suffixIconColor: textFormModel.suffixIconColor ?? AppColors.grey,
+      suffixIconColor: textFormModel.suffixIconColor ?? AppColors.iconGrey,
       suffixIconErrorColor: textFormModel.suffixIconErrorColor ?? AppColors.error,
-      prefixIconColor: textFormModel.prefixIconColor ?? AppColors.grey,
+      prefixIconColor: textFormModel.prefixIconColor ?? AppColors.iconGrey,
       prefixIconErrorColor: textFormModel.prefixIconErrorColor ?? AppColors.error,
       borderErrorColor: textFormModel.borderErrorColor ?? AppColors.error,
       hintStyle: textFormModel.hintStyle ?? style(textType: TextTypes.formHint14),
@@ -267,7 +267,7 @@ Color mar7baColors(TextTypes textType){
     case TextTypes.bodyLarge18:
     case TextTypes.titleSummary16:
     case TextTypes.rateText32:
-      return AppColors.textPrimary;
+      return AppColors.textColor;
 
     case TextTypes.buttonTextLarge16:
     case TextTypes.buttonTextSmall12:
@@ -294,7 +294,7 @@ Color mar7baColors(TextTypes textType){
     case TextTypes.bodySmall12:
     case TextTypes.caption10:
     case TextTypes.bodyMedium14:
-      return AppColors.textSecondary;
+      return AppColors.textColor;
 
     case TextTypes.formRequired12:
       return AppColors.error;

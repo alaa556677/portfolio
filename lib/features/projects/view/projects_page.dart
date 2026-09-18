@@ -1,45 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:portfolio/core_old/widgets/loading_widget.dart';
+import 'package:my_reference/my_reference.dart';
+import 'package:portfolio/core/widgets/portfolio_manager.dart';
 import 'package:portfolio/features/projects/view/widgets/project_card.dart';
-import '../../../core_old/states.dart';
-import '../controller/project_controller.dart';
-import '../model/projects_model.dart';
+import '../logic/projects_cubit.dart';
+import '../logic/projects_states.dart';
 
-class ProjectPage extends StatefulWidget {
+class ProjectPage extends StatelessWidget {
   const ProjectPage({super.key});
-  @override
-  State<ProjectPage> createState() => _ProjectPageState();
-}
-
-class _ProjectPageState extends State<ProjectPage> {
-  final ProjectController projectController = Get.find();
-  ProjectsModel? projectsModel;
-
-  @override
-  void initState() {
-    projectController.loadProjects().then((info) {
-      setState(() {
-        projectsModel = info;
-      });
-    });
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
-    return projectController.projectsStates.value == RequestState.success ? Padding(
-      padding: EdgeInsetsDirectional.only(top: 30, start: 20, end: 20, bottom: 16),
-      child: Center(
-        child: SingleChildScrollView(
-          child: Wrap(
-            runSpacing: 30,
-            spacing: 30,
-            children: projectsModel!.projects!.map((e) => ProjectCard(projects: e)).toList(),
-          ),
-        )
-      )
-    ):LoadingWidget();
+    return BlocProvider(
+      create: (_) => getIt<ProjectsCubit>()..loadProjects(),
+      child: BlocBuilder<ProjectsCubit, ProjectsStates>(
+        builder: (context, state) {
+          final projectsModel = state.projectsState.data;
+          if (!state.projectsState.isSuccess || projectsModel == null) {
+            return PortfolioManager.loadingWidget();
+          }
+          return Padding(
+            padding: EdgeInsetsDirectional.only(top: 30, start: 20, end: 20, bottom: 16),
+            child: Center(
+              child: SingleChildScrollView(
+                child: Wrap(
+                  runSpacing: 30,
+                  spacing: 30,
+                  children: projectsModel.projects!.map((e) => ProjectCard(projects: e)).toList(),
+                ),
+              )
+            ),
+          );
+        },
+      ),
+    );
   }
 }

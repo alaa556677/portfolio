@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:my_reference/my_reference.dart';
 import 'package:portfolio/core/helpers/methods.dart';
-import 'package:portfolio/core_old/widgets/border_style.dart';
-import '../../../../core_old/app_constants.dart';
-import '../../../../core_old/styles/colors.dart';
-import '../../../../core_old/widgets/container_image.dart';
-import '../../../../core_old/widgets/custom_button.dart';
-import '../../../../core_old/widgets/custom_text.dart';
-import '../../model/projects_model.dart';
+import 'package:portfolio/core/widgets/colors.dart';
+import 'package:portfolio/core/widgets/portfolio_manager.dart';
+import '../../../about/view/widgets/section_decorations.dart';
+import '../../data/model/projects_model.dart';
+import 'container_image.dart';
+import 'custom_button.dart';
 
 class ProjectCard extends StatelessWidget {
   final Projects projects;
@@ -33,11 +33,14 @@ class ProjectCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomTextWidget(
-                  text: projects.projectName,
-                  fontSize: AppConstants.titleFontSize,
-                  fontColor: AppColors.textColor,
-                ),
+                PortfolioManager.text(TextModel(
+                  text: projects.projectName ?? '',
+                  style: PortfolioManager.style(textType: TextTypes.bodyMedium14).copyWith(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.textColor,
+                  ),
+                )),
                 SizedBox(height: 12,),
                 Container(
                   constraints: BoxConstraints(
@@ -55,12 +58,15 @@ class ProjectCard extends StatelessWidget {
                           ),
                           SizedBox(width: 14,),
                           Expanded(
-                            child: CustomTextWidget(
+                            child: PortfolioManager.text(TextModel(
                               text: e,
-                              fontColor: AppColors.textSecondaryColor(context),
-                              fontSize: 15,
-                              height: 1.8,
-                            ),
+                              style: PortfolioManager.style(textType: TextTypes.bodyMedium14).copyWith(
+                                color: AppColors.textSecondary(context),
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
+                                height: 1.8,
+                              ),
+                            )),
                           )
                         ],
                       ),

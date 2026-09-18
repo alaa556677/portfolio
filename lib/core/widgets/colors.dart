@@ -1,36 +1,19 @@
 import 'package:flutter/material.dart';
 
 class AppColors{
-  // Brand Colors
-  static const Color primary = Color(0xFF076A3B);
-  static const Color hintMessageColor = Color(0xFFD99B2B);
-
-  // Backgrounds 
-  static const Color scaffoldBackground  = Color(0xFFEDEDF2);
-  static const Color accentPurple = Color(0xFFA64DFF);
-  static const Color backgroundCardGrey = Color(0xFF9CA3AF);
-  static const Color backgroundLinearProgress = Color(0xFFEEEEEE);
-
-  // Text Colors 
-  static const Color textPrimary = Color(0xFF111827);
-  static const Color textSecondary = Color(0xFF374151);
-  static const Color textHint = Color(0xFF6B7280);
-
-  // Neutral Colors
-  static const Color black = Colors.black;
+  static Color textColor = AppColors.white.withValues(alpha: .8);
+  static Color textHint = AppColors.white.withValues(alpha: .8);
+  static Color iconGrey = AppColors.white.withValues(alpha: .8);
+  static Color textSecondary(BuildContext context) {
+    return AppColors.white.withValues(alpha: .65);
+  }
+  static const Color gradientColor1 = Color(0xFF0F2027);
+  static const Color primary = Color(0xFF0F2027);
+  static const Color gradientColor2 = Color(0xFF203A43);
+  static const Color gradientColor3 = Color(0xFF2C5364);
   static const Color white = Colors.white;
-  static const Color grey = Colors.grey;
-
-  // icons
-  static const Color iconGrey = Color(0xFF9CA3AF);
-  static const Color iconDark = Color(0xFF111827);
-  static const Color iconRateDark = Colors.amber;
-
-  // status color
-  static const Color success = Colors.green;
-  static const Color error = Colors.redAccent;
-
-  // borders 
-  static const Color borderLight  = Color(0xFFF3F4F6);
-  static const Color borderDark  = Color(0xFF9CA3AF);
+  static const Color blackColor = Colors.black;
+  static const Color transparent = Colors.transparent;
+  static Color textTransparent = Colors.black.withValues(alpha: .6);
+  static Color error = Colors.red;
 }

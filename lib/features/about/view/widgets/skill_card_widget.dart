@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core_old/styles/colors.dart';
-import '../../../../core_old/app_constants.dart';
-import '../../../../core_old/widgets/border_style.dart';
-import '../../../../core_old/widgets/custom_text.dart';
+import 'package:my_reference/my_reference.dart';
+import 'package:portfolio/core/widgets/colors.dart';
+import 'package:portfolio/core/widgets/portfolio_manager.dart';
+import 'section_decorations.dart';
 
 class SkillCardWidget extends StatelessWidget {
   final String text;
@@ -12,7 +12,14 @@ class SkillCardWidget extends StatelessWidget {
     return Container(
       decoration: getBorderStyle(context),
       padding: EdgeInsetsDirectional.symmetric(horizontal: 12, vertical: 8),
-      child: CustomTextWidget(text: text, fontSize: AppConstants.informationFontSize, fontColor: AppColors.textSecondaryColor(context)),
+      child: PortfolioManager.text(TextModel(
+        text: text,
+        style: PortfolioManager.style(textType: TextTypes.badge12).copyWith(
+          fontSize: 12,
+          fontWeight: FontWeight.w400,
+          color: AppColors.textSecondary(context),
+        ),
+      )),
     );
   }
 }

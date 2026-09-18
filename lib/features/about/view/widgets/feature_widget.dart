@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core_old/styles/colors.dart';
-import '../../../../core_old/app_constants.dart';
-import '../../../../core_old/widgets/custom_text.dart';
+import 'package:my_reference/my_reference.dart';
+import 'package:portfolio/core/widgets/colors.dart';
+import 'package:portfolio/core/widgets/portfolio_manager.dart';
 
 class FeatureWidget extends StatelessWidget {
   final String title;
@@ -29,12 +29,14 @@ class FeatureWidget extends StatelessWidget {
               Icon(Icons.circle, size: 10, color: AppColors.textColor),
               SizedBox(width: 8,),
             ],
-            CustomTextWidget(
+            PortfolioManager.text(TextModel(
               text: title,
-              fontColor: titleColor ?? AppColors.textSecondaryColor(context),
-              fontSize: fontSize ??  AppConstants.subTitleFontSize,
-              fontWeight: titleColor != null ? FontWeight.w600 : FontWeight.w400,
-            ),
+              style: PortfolioManager.style(textType: TextTypes.bodyMedium14).copyWith(
+                color: titleColor ?? AppColors.textSecondary(context),
+                fontSize: fontSize ?? 16,
+                fontWeight: titleColor != null ? FontWeight.w600 : FontWeight.w400,
+              ),
+            )),
           ],
         ),
         SizedBox(height: 16,),

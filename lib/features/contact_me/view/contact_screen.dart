@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:portfolio/core_old/states.dart';
-import 'package:portfolio/core_old/widgets/loading_widget.dart';
-import 'package:portfolio/core_old/widgets/text_field.dart';
-
-import '../../../core_old/app_constants.dart';
-import '../../../core_old/styles/colors.dart';
-import '../../../core_old/widgets/custom_text.dart';
-import '../controller/controller.dart';
+import 'package:my_reference/my_reference.dart';
+import 'package:portfolio/core/widgets/colors.dart';
+import 'package:portfolio/core/widgets/portfolio_manager.dart';
+import '../logic/contact_cubit.dart';
+import '../logic/contact_states.dart';
 
 class ContactScreen extends StatefulWidget {
   const ContactScreen({super.key});
@@ -18,7 +13,14 @@ class ContactScreen extends StatefulWidget {
 
 class _ContactScreenState extends State<ContactScreen> {
   var formKey = GlobalKey <FormState> ();
-  final ContactController contactController = Get.find();
+  final ContactCubit contactCubit = getIt();
+
+  String? _requiredValidator(String? value) {
+    if (value == null || value.toString().isEmpty) {
+      return "Required";
+    }
+    return null;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,94 +32,84 @@ class _ContactScreenState extends State<ContactScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomTextFormField(
-                controller: contactController.nameController,
+              PortfolioManager.textForm(TextFormModel(
+                controller: contactCubit.nameController,
                 hintText: "Full Name",
-                prefix: Icons.person,
-                validator: (value){
-                  if (value == null || value.toString().isEmpty) {
-                    return "Required";
-                  }
-                  return null;
-                },
-              ),
+                prefixIcon: Icons.person,
+                filledColor: Colors.transparent,
+                enabledBorderColor: AppColors.textSecondary(context),
+                validator: _requiredValidator,
+              )),
               SizedBox(height: 20,),
-              CustomTextFormField(
-                controller: contactController.emailController,
+              PortfolioManager.textForm(TextFormModel(
+                controller: contactCubit.emailController,
                 hintText: "Email",
-                prefix: Icons.email,
-                validator: (value){
-                  if (value == null || value.toString().isEmpty) {
-                    return "Required";
-                  }
-                  return null;
-                },
-              ),
+                prefixIcon: Icons.email,
+                filledColor: Colors.transparent,
+                enabledBorderColor: AppColors.textSecondary(context),
+                validator: _requiredValidator,
+              )),
               SizedBox(height: 20,),
-              CustomTextFormField(
-                controller: contactController.phoneController,
+              PortfolioManager.textForm(TextFormModel(
+                controller: contactCubit.phoneController,
                 hintText: "Phone",
-                prefix: Icons.phone_android,
-                validator: (value){
-                  if (value == null || value.toString().isEmpty) {
-                    return "Required";
-                  }
-                  return null;
-                },
-              ),
+                prefixIcon: Icons.phone_android,
+                filledColor: Colors.transparent,
+                enabledBorderColor: AppColors.textSecondary(context),
+                validator: _requiredValidator,
+              )),
               SizedBox(height: 20,),
-              CustomTextFormField(
-                controller: contactController.messageController,
+              PortfolioManager.textForm(TextFormModel(
+                controller: contactCubit.messageController,
                 hintText: "Write message",
-                prefix: Icons.message,
+                prefixIcon: Icons.message,
                 minLines: 5,
-                validator: (value){
-                  if (value == null || value.toString().isEmpty) {
-                    return "Required";
-                  }
-                  return null;
-                },
-              ),
+                maxLines: 8,
+                filledColor: Colors.transparent,
+                enabledBorderColor: AppColors.textSecondary(context),
+                validator: _requiredValidator,
+              )),
               SizedBox(height: 30,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Obx(()=> contactController.emailStates.value == RequestState.loading ? Padding(
-                    padding: EdgeInsetsDirectional.only(end: 14),
-                    child: LoadingWidget(),
-                  ) : InkWell(
-                    onTap: () async {
-                      if(formKey.currentState!.validate()){
-                        await contactController.sendPortfolioEmail(
-                          name: contactController.nameController.text,
-                          email: contactController.emailController.text,
-                          phone: contactController.phoneController.text,
-                          message: contactController.messageController.text,
-                        );
-                      }
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: AppColors.textSecondaryColor(context),
-                        borderRadius: BorderRadius.circular(8),
+              BlocBuilder<ContactCubit, ContactStates>(
+                bloc: contactCubit,
+                buildWhen: (previous, current) => previous.sendEmailState != current.sendEmailState,
+                builder: (context, state) => Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    state.sendEmailState.isLoading ? Padding(
+                      padding: EdgeInsetsDirectional.only(end: 14),
+                      child: PortfolioManager.loadingWidget(),
+                    ) : InkWell(
+                      onTap: () async {
+                        if(formKey.currentState!.validate()){
+                          await contactCubit.sendPortfolioEmail();
+                        }
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: AppColors.textSecondary(context),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        padding: EdgeInsetsDirectional.symmetric(horizontal: 20, vertical: 8),
+                        alignment: Alignment.center,
+                        child: Row(
+                          children: [
+                            PortfolioManager.text(TextModel(
+                              text: "Send",
+                              style: PortfolioManager.style(textType: TextTypes.buttonTextMedium14).copyWith(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w800,
+                                color: AppColors.textTransparent,
+                              ),
+                            )),
+                            SizedBox(width: 6,),
+                            Icon(Icons.send, size: 16, color: AppColors.textTransparent,)
+                          ],
+                        ),
                       ),
-                      padding: EdgeInsetsDirectional.symmetric(horizontal: 20, vertical: 8),
-                      alignment: Alignment.center,
-                      child: Row(
-                        children: [
-                          CustomTextWidget(
-                            text: "Send",
-                            fontSize: AppConstants.personalInformationFontSize,
-                            fontColor: AppColors.textTransparent,
-                            fontWeight: FontWeight.w800,
-                          ),
-                          SizedBox(width: 6,),
-                          Icon(Icons.send, size: 16, color: AppColors.textTransparent,)
-                        ],
-                      ),
-                    ),
-                  ))
-                ],
+                    )
+                  ],
+                ),
               )
             ],
           ),
