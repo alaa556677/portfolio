@@ -26,10 +26,10 @@ jobs:
           cache: true
 
       - name: Install dependencies
-        run: fvm flutter pub get
+        run: flutter pub get
 
       - name: Build Flutter Web
-        run: fvm flutter build web --release --base-href "/${{ github.event.repository.name }}/"
+        run: flutter build web --release --base-href "/${{ github.event.repository.name }}/"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
