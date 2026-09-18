@@ -35,7 +35,7 @@ class _DesktopLayoutState extends State<DesktopLayout> with SingleTickerProvider
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          PersonalSidebar(),
+        PersonalSidebar(),
           Expanded(
             child: Padding(
               padding: EdgeInsetsDirectional.symmetric(horizontal: 30, vertical: 50),
