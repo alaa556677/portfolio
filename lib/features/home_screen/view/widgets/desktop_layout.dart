@@ -9,6 +9,7 @@ import '../../../experiense/view/experience_page.dart';
 import '../../../projects/view/projects_page.dart';
 import '../../../sidebar/view/personal_sidebar.dart';
 import '../../logic/home_cubit.dart';
+import 'keep_alive_page.dart';
 
 class DesktopLayout extends StatefulWidget {
   const DesktopLayout({super.key});
@@ -115,10 +116,10 @@ class _DesktopLayoutState extends State<DesktopLayout> with SingleTickerProvider
                       child: TabBarView(
                         controller: _tabController,
                         children: [
-                          AboutPage(),
-                          ExperiencePage(),
-                          ProjectPage(),
-                          ContactScreen(),
+                          KeepAlivePage(child: AboutPage()),
+                          KeepAlivePage(child: ExperiencePage()),
+                          KeepAlivePage(child: ProjectPage()),
+                          KeepAlivePage(child: ContactScreen()),
                         ]
                       )
                     )

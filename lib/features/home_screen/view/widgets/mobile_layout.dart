@@ -9,6 +9,7 @@ import '../../../experiense/view/experience_page.dart';
 import '../../../projects/view/projects_page.dart';
 import '../../../sidebar/view/personal_sidebar.dart';
 import '../../logic/home_cubit.dart';
+import 'keep_alive_page.dart';
 
 class MobileLayout extends StatefulWidget {
   const MobileLayout({super.key});
@@ -110,10 +111,10 @@ class _MobileLayoutState extends State<MobileLayout> with SingleTickerProviderSt
                   child: TabBarView(
                     controller: _tabController,
                     children: [
-                      AboutPage(),
-                      ExperiencePage(isMobile: true,),
-                      ProjectPage(),
-                      ContactScreen(),
+                      KeepAlivePage(child: AboutPage()),
+                      KeepAlivePage(child: ExperiencePage(isMobile: true,)),
+                      KeepAlivePage(child: ProjectPage()),
+                      KeepAlivePage(child: ContactScreen()),
                     ]
                   ),
                 )
