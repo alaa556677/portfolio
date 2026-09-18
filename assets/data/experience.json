@@ -1,7 +1,7 @@
 {
   "experience" : [
     {
-      "jobTitle" : "Senior Flutter Developer",
+      "jobTitle" : "Senior Mobile Application Engineer | Flutter Specialist",
       "company" : "Dexef ERP (Full-time)",
       "location" : "Qwesna - Menofia",
       "dateFrom" : "Mars in 2023",
@@ -74,6 +74,23 @@
         "Sql",
         "Anydesk",
         "It help desk"
+      ]
+    },
+    {
+      "jobTitle" : "Technical Support",
+      "company" : "WE",
+      "location" : "Eldoky",
+      "dateFrom" : "Jan 2022",
+      "dateTo" : "may 2022",
+      "skills" : [
+        "Resolved 150+ tickets/month, reducing average resolution time by 35%.",
+        "Improved customer satisfaction through proactive issue prevention strategies."
+      ],
+      "technology" : [
+        "Windows",
+        "Microsoft Office",
+        "Remote Desktop",
+        "Network Troubleshooting"
       ]
     }
   ]

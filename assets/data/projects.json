@@ -1,7 +1,7 @@
 {
   "projects" : [
     {
-      "projectName" : "Dexef POS",
+      "projectName" : "POS",
       "imageUrl" : "assets/images/pos.png",
       "imagePaths" : [],
       "googleLink" : "https://play.google.com/store/apps/details?id=com.dexef.dexef_one_pro_flutter&pli=1",
@@ -14,7 +14,7 @@
       ]
     },
     {
-      "projectName" : "Dexef Ticket",
+      "projectName" : "Rwafy",
       "imageUrl" : "assets/images/ticket.png",
       "imagePaths" : [],
       "googleLink" : "https://play.google.com/store/apps/details?id=com.dexef.dexef_ticket",
@@ -54,7 +54,7 @@
       "imagePaths" : [],
       "googleLink" : "",
       "appleLink" : "",
-      "webLink" : "https://my.dexef.com/download-center",
+      "webLink" : "https://my.dexef.com",
       "information" : [
         "Flutter web app for managing Dexef accounts, devices, and workspaces."
       ]
@@ -71,14 +71,26 @@
       ]
     },
     {
-      "projectName" : "Hawalyk",
-      "imageUrl" : "assets/images/defaultImage.png",
+      "projectName" : "Aljthoor",
+      "imageUrl" : "assets/images/login_aljthoor.jpeg",
       "imagePaths" : [],
-      "googleLink" : "",
-      "appleLink" : "",
+      "googleLink" : "https://play.google.com/store/apps/details?id=com.aljthoor.aljthoor",
+      "appleLink" : "https://apps.apple.com/eg/app/aljthoor/id6800338171",
       "webLink" : "",
       "information" : [
-        "Multi-service marketplace platform combining clinics, restaurants, and clothing stores. Enables merchants to register as sellers, list products, and reach a wider audience, while customers can browse and order services/products from any location."
+        "A complete ERP solution designed for schools and bookstores.",
+        "Easily manage books, school supplies, inventory, sales, purchases, customers, suppliers, and accounts from one powerful, user-friendly system."
+      ]
+    },
+    {
+      "projectName" : "9am mobile",
+      "imageUrl" : "assets/images/9am_mobile.png",
+      "imagePaths" : [],
+      "googleLink" : "https://play.google.com/store/apps/details?id=com.dexef.dexefpos",
+      "appleLink" : "https://apps.apple.com/eg/app/9am-mobile/id6760290275",
+      "webLink" : "",
+      "information" : [
+        "An accounting application that allows you to easily create invoices, manage expenses and revenues, record cash payments and receipts, and generate reports for an overall financial overview."
       ]
     },
     {
