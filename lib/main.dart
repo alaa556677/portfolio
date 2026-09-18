@@ -15,10 +15,12 @@ void main() async {
   ));
   setupGetIT();
   runApp(PortfolioManager.mainWidget(MainModel(
-     providers: [
+    providers: [
       BlocProvider<AppLocaleCubit>(create: (_) => getIt<AppLocaleCubit>())
     ],
-    title: 'Mar7ba',
+    screenUtilWidth: 1920,
+    screenUtilHeight: 800,
+    title: 'Portfolio',
     supportedLocales: AppLocalizations.supportedLocales,
     localizationsDelegates: const [
       AppLocalizations.delegate,
