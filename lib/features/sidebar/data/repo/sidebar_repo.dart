@@ -11,10 +11,10 @@ class SidebarRepo {
   }
 
   void downloadCV() {
-    const filePath = 'assets/assets/docs/alaa_CV.pdf';
+    const filePath = 'assets/assets/docs/Alaa_Bakr_CV.pdf';
     // ignore: unused_local_variable
     html.AnchorElement anchorElement = html.AnchorElement(href: filePath)
-      ..download = "alaa_CV.pdf"
+      ..download = "Alaa_Bakr_CV.pdf"
       ..click();
   }
 }
