@@ -90,18 +90,8 @@
       "appleLink" : "https://apps.apple.com/eg/app/9am-mobile/id6760290275",
       "webLink" : "",
       "information" : [
+        "An accounting application that allows you to easily create invoices, manage expenses and revenues, record cash payments and receipts, and generate reports for an overall financial overview.",
         "An accounting application that allows you to easily create invoices, manage expenses and revenues, record cash payments and receipts, and generate reports for an overall financial overview."
-      ]
-    },
-    {
-      "projectName" : "Vminds",
-      "imageUrl" : "assets/images/defaultImage.png",
-      "imagePaths" : [],
-      "googleLink" : "",
-      "appleLink" : "",
-      "webLink" : "",
-      "information" : [
-        "AI tools app for image, music, and audio generation."
       ]
     }
   ]

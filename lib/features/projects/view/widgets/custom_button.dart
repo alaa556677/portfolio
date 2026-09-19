@@ -20,7 +20,7 @@ class CustomButton extends StatelessWidget {
     return PortfolioManager.button(ButtonModel(
       text: buttonName,
       onTap: onTap,
-      height: 48,
+      height: 38,
       buttonColor: buttonColor ?? AppColors.textSecondary(context),
       radius: 20,
       style: PortfolioManager.style(textType: TextTypes.buttonTextMedium14).copyWith(

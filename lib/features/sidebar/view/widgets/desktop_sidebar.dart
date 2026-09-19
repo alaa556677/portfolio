@@ -52,19 +52,21 @@ class DesktopSidebar extends StatelessWidget {
                             style: PortfolioManager.style(textType: TextTypes.bodyMedium14).copyWith(
                               fontSize: 20,
                               fontWeight: FontWeight.w400,
-                              color: AppColors.textColor,
+                              color: AppColors.textColor
                             ),
                           )),
                           const SizedBox(height: 14),
                           PortfolioManager.text(TextModel(
                             text: personalInfo.professionalTitle,
+                            maxLines: 2,
+                            textAlign: TextAlign.center,
                             style: PortfolioManager.style(textType: TextTypes.bodyMedium14).copyWith(
                               fontSize: 20,
                               fontWeight: FontWeight.w400,
                               color: AppColors.white.withValues(alpha: .7),
                             ),
                           )),
-                          const SizedBox(height: 14),
+                          const SizedBox(height: 24),
                           RowInformationWidget(
                             icon: Icons.email_outlined,
                             value: personalInfo.email,
